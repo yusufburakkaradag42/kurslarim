@@ -8,7 +8,9 @@ export default function App() {
   const startModal = () => {
     setModelIsVisible(true);
   }
-
+  const addCourse = (courseTitle) => {
+      console.log(courseTitle);
+  }
 
   return (
     <>
@@ -21,6 +23,7 @@ export default function App() {
       />
       <CourseInput 
       visible={modalIsVisible}
+      onAddCourse={addCourse}
       />
     </View>
     </>
