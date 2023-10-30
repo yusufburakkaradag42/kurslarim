@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View , Modal,Image , TextInput, Button} from 'react-native'
 import React, { useState } from 'react'
 
-export default function CourseInput({visible , onAddCourse}) {
+export default function CourseInput({visible , onAddCourse , onCancel}) {
     const [enteredCourselText , setEnteredCourseText] = useState('')
     const addCourseHandler = () => {
         onAddCourse(enteredCourselText)
+        setEnteredCourseText('');//kutuyu boşaltma 
 
     }
     // const CourseInputHandler = (enteredText) => {
@@ -26,7 +27,7 @@ export default function CourseInput({visible , onAddCourse}) {
           />
           <View style={styles.buttonContainer}>
             <View style={styles.button}>
-              <Button title='İptal Et' color={"red"}/>
+              <Button title='İptal Et' color={"red"}  onPress={onCancel}/>
             </View>
             <View style={styles.button}>
               <Button title='Ekle' color={"blue"}
