@@ -5,6 +5,7 @@ import CourseInput from './components/CourseInput';
 
 export default function App() {
   const [modalIsVisible, setModelIsVisible] = useState(false)
+  const [courses, setCourses] = useState([])
   const startModal = () => {
     setModelIsVisible(true);
   }
@@ -12,7 +13,7 @@ export default function App() {
     setModelIsVisible(false);
   }
   const addCourse = (courseTitle) => {
-      console.log(courseTitle);
+      // console.log(courseTitle);
       endModal();
   }
 
